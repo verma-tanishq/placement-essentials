@@ -584,7 +584,7 @@ int main()
 	return 0;
 }
 
-Let's assume that the elements of the array are linearly distributed. 
+Lets assume that the elements of the array are linearly distributed. 
 
 General equation of line : y = m*x + c.
 y is the value in the array and x is its index.
