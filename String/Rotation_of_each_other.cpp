@@ -13,7 +13,7 @@ if (str1.length() != str2.length())
 		return false;
 
 string temp = str1 + str1;
-return (temp.find(str2) != string::npos);
+return (temp.find(str2) != string::npos);  //string::npos means -1
 }
 
 /* Driver program to test areRotations */
