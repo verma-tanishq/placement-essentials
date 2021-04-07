@@ -118,3 +118,7 @@ int main(){
     cout<<infixToPrefix("(a-b/c)*(a/k-l)")<<endl;
     return 0;
 }
+
+/* Output 
+ *-a/bc-/akl
+ */
