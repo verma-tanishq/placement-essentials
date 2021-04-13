@@ -55,3 +55,50 @@ int main(){
     }
     return 0;
 }
+/* Output
+1 : 123
+2 : 132
+3 : 213
+4 : 312
+5 : 321
+*/
+// C++ dynamic programming implementation of the approach
+#include <iostream>
+using namespace std;
+
+// Function to return the count
+// of unique BSTs with n keys
+int uniqueBSTs(int n)
+{
+	// construct a dp array to store the
+	// subsequent results
+	int dparray[n + 1] = { 0 };
+
+	// there is only one combination to construct a
+	// BST out of a sequence of
+	dparray[0] = dparray[1] = 1;
+	
+	// length 1 (only a root) or 0 (empty tree).
+	for (int i = 2; i <= n; ++i)
+	{
+		// choosing every value as root
+		for (int k = 1; k <= i; ++k)
+		{
+			dparray[i] += dparray[k - 1] * dparray[i - k];
+		}
+	}
+	return dparray[n];
+}
+
+// Driver code
+int main()
+{
+	int n = 2;
+
+	// Function call
+	cout << uniqueBSTs(n);
+
+	return 0;
+}
+// Time Complexity O(n^2)
+// Space Complexity O(n)
