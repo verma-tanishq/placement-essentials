@@ -32,6 +32,7 @@ int main(){
     cout<<get_max_area(a);
     return 0;
 }
+// contributed by tanishq
 
 //<---------------------------------------------------------------------------------------->
 // C++ program to find maximum rectangular area in
