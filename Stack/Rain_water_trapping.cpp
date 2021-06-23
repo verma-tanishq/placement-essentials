@@ -51,3 +51,38 @@ Only one traversal of the array is needed, So time Complexity is O(n).
 Space Complexity: O(n). 
 Two extra arrays are needed each of size n.
 */
+
+<---------------- Aother Method ------------------>
+	int rainWaterTrap(int arr[], int n){
+    int low =0, high=n-1;
+    int result = 0;
+    int left_max = 0, right_max = 0;
+
+    while(low<=high){
+        if(arr[low]<arr[high]){
+            if(arr[low]>left_max){
+                left_max = arr[low];
+            }
+            else{
+                result+=left_max - arr[low];
+            }
+            low++;
+        }
+        else{
+            if(arr[high]>right_max){
+                right_max = arr[high];
+            }
+            else{
+                result+=right_max-arr[high];
+            }
+            high--;
+        }
+    }
+    return result;
+}
+/*
+Time Complexity: O(n). 
+Only one traversal of the array is needed, So time Complexity is O(n).
+Space Complexity: O(1). 
+Two extra arrays are needed each of size n.
+*/
