@@ -6,8 +6,7 @@ using namespace std;
 int n, dp[1000][1000];
 string str = "abcd";
 
-// Function return the total
-// palindromic subsequence
+// Function return the total palindromic subsequence
 int countPS(int i, int j)
 {
 
