@@ -1,6 +1,6 @@
 /* C++ program to solve Rat in
 a Maze problem using backtracking */
-#include <stdio.h>
+#include <iostream>
 
 // Maze size
 #define N 4
