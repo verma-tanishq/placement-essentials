@@ -21,7 +21,9 @@ int LCS(string X, string Y, int n, int m) {
 }
 
 int SCS(string X, string Y, int n, int m) {
-	return m + n - LCS(X, Y, n, m); // formula // n-> length of string x ; m-> length of string y
+	return m + n - LCS(X, Y, n, m); // formula
+
+ // n-> length of string x ; m-> length of string y
 }
 
 signed main() {
