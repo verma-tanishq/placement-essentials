@@ -23,7 +23,8 @@ int LCS(string X, string Y, int n, int m) {
 int LPS(string X, int n) {
 	string rev_X = X;
 	reverse(rev_X.begin(), rev_X.end()); 
-	// reverse the string // take reversed string as another string of lcs and apply lcs 
+	// reverse the string 
+	// take reversed string as another string of lcs and apply lcs 
 	return LCS(X, rev_X, n, n);
 }
 
