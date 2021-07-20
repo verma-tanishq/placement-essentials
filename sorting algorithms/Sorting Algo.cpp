@@ -64,12 +64,13 @@ int main(){
     return 0;
 }
 
-Worst complexity: n^2
+/* Worst complexity: n^2
 Average complexity: n^2
 Best complexity: n
 Space complexity: 1
 Method: Exchanging
 Stable: Yes
+*/
 
 <----------------------------------- Selection Sort ---------------------------------->
 #include<iostream>
