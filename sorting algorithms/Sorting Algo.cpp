@@ -100,13 +100,14 @@ int main(){
     selectionSort(arr,n);
     return 0;
 }
-
+/*
 Worst complexity: n^2
 Average complexity: n^2
 Best complexity: n^2
 Space complexity: 1
 Method: Selection
 Stable: No
+*/
 
 <------------------------------ Merge Sort ----------------------------------------->
 #include <iostream>
