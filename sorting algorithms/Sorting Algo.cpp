@@ -206,7 +206,7 @@ int main()
     printArray(arr, arr_size);
     return 0;
 }
-
+/*
 Inventor: John von Neumann
 Worst complexity: n*log(n)
 Average complexity: n*log(n)
@@ -214,6 +214,7 @@ Best complexity: n*log(n)
 Space complexity: n
 Method: Merging
 Stable: Yes
+*/
 
 <--------------------------------- Quick Sort --------------------------------------->
 #include<bits/stdc++.h>
