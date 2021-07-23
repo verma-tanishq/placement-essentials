@@ -263,7 +263,7 @@ int main(){
 
     return 0;
 }
-
+/*
 Inventor: Tony Hoare
 Worst complexity: n^2
 Average complexity: n*log(n)
@@ -271,6 +271,7 @@ Best complexity: n*log(n)
 Method: Partitioning
 Stable: No
 Class: Comparison sort
+*/
 
 <------------------------------------ Count Sort ---------------------------------------->
 #include<bits/stdc++.h>
