@@ -309,12 +309,13 @@ int main(){
         cout<<arr[i]<<" ";
     }cout<<endl;
 }
-
+/*
 Worst complexity: n+r
 Average complexity: n+r
 Space complexity: n+r
 Stable: Yes
 Class: Non-comparison sort
+*/
 
 <------------------------------------ Shell Sort --------------------------------------->
 #include<bits/stdc++.h>
