@@ -33,7 +33,8 @@ long countWays(int n, int k)
 // Driver code
 int main()
 {
-	int n = 3, k = 2;
+	int n = 3,   //post or fence
+	int k = 2;  //color
 	cout << countWays(n, k) << endl;
 	return 0;
 }
