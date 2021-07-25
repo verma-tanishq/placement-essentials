@@ -18,7 +18,7 @@ long countWays(int n, int k)
 		dp[i] = ((k - 1) * (dp[i - 1] + dp[i - 2])) % mod;
 	}
   /*
-  long long same=0, diff=k, total=diff+sum;
+  long long same=0, diff=k, total=diff+same;
   for(int i=2; i<=n; i++){
             same = diff;
             diff = total*(k-1);
