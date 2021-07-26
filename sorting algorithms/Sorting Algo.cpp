@@ -346,7 +346,7 @@ int main(){
     }cout<<endl;
     return 0;
 }
-
+/*
 Inventor: Donald Shell
 Worst complexity: Depends on gap sequence
 Average complexity: n*log(n)^2 or n^(3/2)
@@ -354,6 +354,7 @@ Best complexity: n
 Method: Insertion
 Stable: No
 Class: Comparison sort
+*/
 
 <------------------------------------ Radix Sort using count method ----------------------------------->
 
