@@ -521,7 +521,7 @@ int main()
 	cout << "Sorted array is \n";
 	printArray(arr, n);
 }
-
+/*
 Inventor: J. W. J. Williams
 Worst complexity: n*log(n)
 Average complexity: n*log(n)
@@ -529,6 +529,7 @@ Best complexity: n*log(n)
 Space complexity: 1
 Method: Selection
 Stable: No
+*/
 
 <------------------------------------ Interpolation Sort ------------------------------------>
 // C++ program to implement interpolation search
