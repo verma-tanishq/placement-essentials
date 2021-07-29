@@ -449,10 +449,11 @@ int main(){
     }cout<<endl;
     return 0;
 }
-
+/*
 The average time O(n + k). 
 The worst time complexity O(n²). 
 The space complexity is O(n+k).
+*/
 
 <---------------------------------------- Heap Sort ------------------------------------------>
 // C++ program for implementation of Heap Sort
