@@ -592,7 +592,7 @@ int main()
 		cout << "Element not found.";
 	return 0;
 }
-
+/*
 Lets assume that the elements of the array are linearly distributed. 
 
 General equation of line : y = m*x + c.
@@ -616,6 +616,7 @@ Worst-case performance	 O(n^(2))
 Best-case performance	 O(n)
 Average performance	 O(n+k)
 Worst-case space complexity O(n*3)
+*/
 
 <------------------------------------ 3 way Quick Sort (Dutch National Flag) ---------------------------------->
 // C++ program for 3-way quick sort
