@@ -15,6 +15,7 @@ void printLinkedList(Node* n){
 }
 
 
+
 int main(){
     Node* head = NULL;
     Node* second = NULL;
