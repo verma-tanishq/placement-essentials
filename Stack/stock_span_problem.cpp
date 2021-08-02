@@ -1,6 +1,7 @@
 class Solution
 {
   public:
+  
   vector <int> calculateSpan(int price[], int n)
   {
     vector <int> v; // creating vector to store result 
