@@ -13,6 +13,7 @@ void printSubStr(char* str, int low, int high)
 
 // This function prints the
 // longest palindrome substring (LPS)
+
 // of str[]. It also returns the
 // length of the longest palindrome
 int longestPalSubstr(char* str)
