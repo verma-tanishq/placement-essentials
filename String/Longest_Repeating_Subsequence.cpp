@@ -7,6 +7,7 @@ using namespace std;
 // This function mainly returns LCS(str, str)
 // with a condition that same characters at
 // same index are not considered.
+
 int findLongestRepeatingSubSeq(string str)
 {
 	int n = str.length();
