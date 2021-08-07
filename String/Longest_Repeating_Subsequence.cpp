@@ -22,6 +22,7 @@ int findLongestRepeatingSubSeq(string str)
 	for (int i=1; i<=n; i++)
 	{
 		for (int j=1; j<=n; j++)
+			
 		{
 			// If characters match and indexes are
 			not same
