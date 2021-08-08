@@ -29,7 +29,8 @@ int longestPalSubstr(char* str)
 	// One by one consider every
 	// character as center point of
 	// even and length palindromes
-	for (int i = 1; i < len; ++i) {
+	for (int i = 1; i < len; ++i)
+	{
 		// Find the longest even length palindrome
 		// with center points as i-1 and i.
 		low = i - 1;
