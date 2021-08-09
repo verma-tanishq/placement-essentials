@@ -25,6 +25,7 @@ using namespace std;
 // 1. String
 // 2. Starting index of the string
 // 3. Ending index of the string.
+
 void permute(string a, int l, int r)
 {
 	// Base case
