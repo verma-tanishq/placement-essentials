@@ -28,6 +28,7 @@ using namespace std;
 
 
 void permute(string a, int l, int r)
+	
 {
 	// Base case
 	if (l == r)
