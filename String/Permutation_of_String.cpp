@@ -45,6 +45,7 @@ void permute(string a, int l, int r)
 			// Recursion called
 			permute(a, l+1, r);
 
+			
 			//backtrack
 			swap(a[l], a[i]);
 		}
