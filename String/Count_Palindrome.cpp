@@ -35,6 +35,7 @@ int main()
 {
 	memset(dp, -1, sizeof(dp));
 	n = str.size();
+	
 	cout << "Total palindromic subsequence are : "
 		<< countPS(0, n - 1) << endl;
 	return 0;
