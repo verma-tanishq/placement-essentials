@@ -45,6 +45,7 @@ string countnndSay(int n)
 			// characters
 			else cnt++;
 		}
+		
 
 		// Update str
 		str = tmp;
