@@ -53,5 +53,8 @@ int main(){
 	cin>>key;
 	cout<<"First Occurance of element is at Index: "<<firstOcc(arr,key,size)<<endl;
 	cout<<"Last Occurance of element is at Index: "<<lastOcc(arr,key,size);
+	
+	cout<<"Total occurance: "<<(lastOcc(arr,key,size)-firstOcc(arr,key,size)+1);
+	
 	return 0;
 }
