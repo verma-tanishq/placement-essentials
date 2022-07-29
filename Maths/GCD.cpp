@@ -1,4 +1,5 @@
 // C++ program to find GCD of two numbers
+// LCM(a,b)*GCD(a,b) = a*b
 #include <iostream>
 using namespace std;
 // Recursive function to return gcd of a and b
