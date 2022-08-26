@@ -1,118 +1,192 @@
-/* C program for boundary traversal
-of a binary tree */
+// https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
 
-#include <stdio.h>
-#include <stdlib.h>
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+#define MAX_HEIGHT 100000
 
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
-struct node {
-	int data;
-	struct node *left, *right;
+// Tree Node
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
 };
 
-// A simple function to print leaf nodes of a binary tree
-void printLeaves(struct node* root)
+// Utility function to create a new Tree Node
+Node* newNode(int val)
 {
-	if (root == NULL)
-		return;
+    Node* temp = new Node;
+    temp->data = val;
+    temp->left = NULL;
+    temp->right = NULL;
 
-	printLeaves(root->left);
-
-	// Print it if it is a leaf node
-	if (!(root->left) && !(root->right))
-		printf("%d ", root->data);
-
-	printLeaves(root->right);
+    return temp;
 }
 
-// A function to print all left boundary nodes, except a leaf node.
-// Print the nodes in TOP DOWN manner
-void printBoundaryLeft(struct node* root)
+
+// Function to Build Tree
+Node* buildTree(string str)
 {
-	if (root == NULL)
-		return;
+    // Corner Case
+    if(str.length() == 0 || str[0] == 'N')
+        return NULL;
 
-	if (root->left) {
+    // Creating vector of strings from input
+    // string after spliting by space
+    vector<string> ip;
 
-		// to ensure top down order, print the node
-		// before calling itself for left subtree
-		printf("%d ", root->data);
-		printBoundaryLeft(root->left);
-	}
-	else if (root->right) {
-		printf("%d ", root->data);
-		printBoundaryLeft(root->right);
-	}
-	// do nothing if it is a leaf node, this way we avoid
-	// duplicates in output
+    istringstream iss(str);
+    for(string str; iss >> str; )
+        ip.push_back(str);
+
+    // Create the root of the tree
+    Node* root = newNode(stoi(ip[0]));
+
+    // Push the root to the queue
+    queue<Node*> queue;
+    queue.push(root);
+
+    // Starting from the second element
+    int i = 1;
+    while(!queue.empty() && i < ip.size()) {
+
+        // Get and remove the front of the queue
+        Node* currNode = queue.front();
+        queue.pop();
+
+        // Get the current node's value from the string
+        string currVal = ip[i];
+
+        // If the left child is not null
+        if(currVal != "N") {
+
+            // Create the left child for the current node
+            currNode->left = newNode(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->left);
+        }
+
+        // For the right child
+        i++;
+        if(i >= ip.size())
+            break;
+        currVal = ip[i];
+
+        // If the right child is not null
+        if(currVal != "N") {
+
+            // Create the right child for the current node
+            currNode->right = newNode(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->right);
+        }
+        i++;
+    }
+
+    return root;
 }
 
-// A function to print all right boundary nodes, except a leaf node
-// Print the nodes in BOTTOM UP manner
-void printBoundaryRight(struct node* root)
+
+
+
+
+
+
+
+
+// } Driver Code Ends
+/* A binary tree Node
+struct Node
 {
-	if (root == NULL)
-		return;
+    int data;
+    Node* left, * right;
+}; */
 
-	if (root->right) {
-		// to ensure bottom up order, first call for right
-		// subtree, then print this node
-		printBoundaryRight(root->right);
-		printf("%d ", root->data);
-	}
-	else if (root->left) {
-		printBoundaryRight(root->left);
-		printf("%d ", root->data);
-	}
-	// do nothing if it is a leaf node, this way we avoid
-	// duplicates in output
+class Solution {
+public:
+
+    void traverseleft(Node* root, vector<int> &ans){
+        
+        if(root==NULL || (root->left==NULL && root->right==NULL)){
+            return ;
+        }
+        ans.push_back(root->data);
+        if(root->left){
+            traverseleft(root->left,ans);
+        }
+        else{
+            traverseleft(root->right,ans);
+        }
+    }
+    
+    void traverseleaf(Node* root, vector<int>&ans){
+        if(root==NULL){
+            return ;
+        }
+        if(root->left==NULL && root->right==NULL){
+            ans.push_back(root->data);
+            return;
+        }
+        traverseleaf(root->left,ans);
+        traverseleaf(root->right,ans);
+    }
+    
+    void traverseright(Node* root, vector<int> &ans){
+        if(root==NULL || (root->left==NULL && root->right==NULL)){
+            return ;
+        }
+        if(root->right){
+            traverseright(root->right,ans);
+        }
+        else{
+            traverseright(root->left,ans);
+        }
+        ans.push_back(root->data);
+        return;
+    }
+    
+    
+    
+    vector <int> boundary(Node *root)
+    {
+        //Your code here
+        vector<int> ans;
+        
+        if(root==NULL){
+            return ans;
+        }
+        ans.push_back(root->data);
+        
+        traverseleft(root->left, ans);
+        traverseleaf(root->left,ans);
+        traverseleaf(root->right,ans);
+        traverseright(root->right, ans);
+        return ans;
+    }
+};
+
+//{ Driver Code Starts.
+
+/* Driver program to test size function*/
+
+int main() {
+    int t;
+    string tc;
+    getline(cin, tc);
+    t=stoi(tc);
+    while(t--)
+    {
+        string s ,ch;
+        getline(cin, s);
+        Node* root = buildTree(s);
+        Solution ob;
+        vector <int> res = ob.boundary(root);
+        for (int i : res) cout << i << " ";
+        cout << endl;
+    }
+    return 0;
 }
-
-// A function to do boundary traversal of a given binary tree
-void printBoundary(struct node* root)
-{
-	if (root == NULL)
-		return;
-
-	printf("%d ", root->data);
-
-	// Print the left boundary in top-down manner.
-	printBoundaryLeft(root->left);
-
-	// Print all leaf nodes
-	printLeaves(root->left);
-	printLeaves(root->right);
-
-	// Print the right boundary in bottom-up manner
-	printBoundaryRight(root->right);
-}
-
-// A utility function to create a node
-struct node* newNode(int data)
-{
-	struct node* temp = (struct node*)malloc(sizeof(struct node));
-
-	temp->data = data;
-	temp->left = temp->right = NULL;
-
-	return temp;
-}
-
-// Driver program to test above functions
-int main()
-{
-	// Let us construct the tree given in the above diagram
-	struct node* root = newNode(20);
-	root->left = newNode(8);
-	root->left->left = newNode(4);
-	root->left->right = newNode(12);
-	root->left->right->left = newNode(10);
-	root->left->right->right = newNode(14);
-	root->right = newNode(22);
-	root->right->right = newNode(25);
-
-	printBoundary(root);
-
-	return 0;
-}
+// } Driver Code Ends
