@@ -16,6 +16,33 @@ static bool comp(struct Item a, struct Item b){
     return r1>r2;
 }
 
+/*
+double fractionalKnapsack(int w, Item arr[], int n){
+    vector<pair<double, Item> >v;
+    for(int i=0; i<n; i++){
+        double perUnitValue = ((1.0)*arr[i].value)/arr[i].weight;
+        pair<double, Item>p = make_pair(perUnitValue,arr[i]);
+        v.push_back(p);
+    }
+    
+    sort(v.begin(),v.end(),cmp);
+    
+    double totalValue = 0.0;
+    for(int i=0; i<n; i++){
+        if(v[i].second.weight>w){
+            totalValue+=w*v[i].first;
+            w = 0;
+        }
+        else{
+            totalValue+=v[i].second.value;
+            w = w-v[i].second.weight;
+        }
+    }
+    return totalValue;
+}
+
+*/
+
 double fractionalKnapsack(int w, struct Item arr[], int n){
     sort(arr,arr+n,comp);
     // int currweight=0;
